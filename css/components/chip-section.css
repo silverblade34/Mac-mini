@@ -1,0 +1,51 @@
+.chip-section .logo{
+    height: 3rem;
+    margin-bottom: 0.25rem;
+}
+
+.chip-section .video-container{
+    height: 25rem;
+    position: relative;
+    margin-top: -2rem;
+    z-index: var(--z-negative);
+}
+
+.chip-section .video{
+    position: absolute;
+    width: 59rem;
+}
+
+@media screen and (min-width: 734px){
+    .chip-section{
+        max-width: 38rem;
+        margin-inline: auto;
+    }
+    .chip-section .logo{
+        height: 4rem;
+        margin-bottom: 0.5rem;
+    }
+    .chip-section .video-container{
+        height: 40rem;
+        margin-top: -4rem;
+    }
+    .chip-section .video{
+        width: 81rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .chip-section{
+        max-width: 68rem;
+    }
+    .chip-section .logo{
+        height: 5rem;
+        margin-bottom: 0.75rem;
+    }
+    .chip-section .video-container{
+        height: 50rem;
+        margin-top: -8rem;
+    }
+    .chip-section .video{
+        width: 90rem;
+    }
+}

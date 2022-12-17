@@ -1,0 +1,436 @@
+.feature-panel {
+    --padding: 2rem;
+    --max-width: 25rem;
+    position: relative;
+}
+
+.feature-panel .content {
+    padding: var(--padding);
+}
+
+.feature-panel .title {
+    font-size: var(--normal-body-size);
+    margin-bottom: 2.5rem;
+}
+
+.feature-panel .subtitle {
+    font-weight: var(--bold-font);
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-panel .description {
+    margin-bottom: 2rem;
+    font-family: var(--display-font);
+    font-weight: var(--semi-bold-font);
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    letter-spacing: 0.012em;
+}
+
+.feature-panel .description .accent {
+    color: var(--text-color-alt);
+}
+
+.feature-panel .button {
+    padding: 0.75rem 1.25rem;
+}
+
+.feature-panel .image {
+    display: block;
+    margin-left: auto;
+    width: 90%;
+}
+
+.feature-panel .caracteristicas-container {
+    display: grid;
+    --column-width: 250px;
+    grid-template-columns: repeat(auto-fill, minman(var(--column-width), 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+    font-size: 1.25rem;
+    text-align: center;
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.feature-panel .caracteristicas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-panel .number {
+    --size: 5rem;
+    font-size: var(--size);
+    font-family: var(--display-font);
+    font-weight: var(--bold-font);
+    line-height: 1;
+}
+
+.feature-panel .number .x {
+    font-size: calc(var(--size) - 2rem);
+}
+
+.feature-panel .caption {
+    font-weight: var(--bold-font);
+}
+
+.feature-panel .background-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-negative);   
+}
+
+.feature-panel .background{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.25rem;
+}
+
+@media screen and (min-width: 360px) {
+    .feature-panel {
+        border-radius: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 734px) {
+    .feature-panel {
+        --padding: 2.5rem;
+        overflow: hidden;
+    }
+
+    .feature-panel .content {
+        box-sizing: content-box;
+        max-width: 24rem;
+        padding-right: 0;
+    }
+
+    .feature-panel .title {
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-panel .subtitle {
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-panel .description {
+        margin-bottom: 3.5rem;
+    }
+
+    .feature-panel .image {
+        --width: 32rem;
+        --spacing: 4rem;
+        width: 30rem;
+        position: absolute;
+        bottom: 0;
+        left: 30rem;
+    }
+
+    .feature-panel .caracteristicas-container {
+        padding-inline: 2rem;
+        margin-top: 0;
+    }
+
+    .feature-panel .break-line {
+        display: none;
+    }
+
+    .feature-panel .number {
+        --size: 6rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .feature-panel .image {
+        right: 0;
+        width: 50%;
+    }
+
+    .feature-panel .title {
+        font-size: 1.9rem;
+        margin-bottom: 3rem;
+    }
+
+    .feature-panel .subtitle {
+        font-size: 3.4rem;
+    }
+
+    .feature-panel .description {
+        font-size: 1.3rem;
+    }
+
+
+}
+
+/* ----- CPU ------ */
+.feature-panel.cpu {
+    background-image: linear-gradient(-135deg, #c6368a 0%, #673dc2 100%);
+}
+
+.feature-panel.cpu .subtitle .accent {
+    color: #c48cFC;
+}
+
+
+/* ------ GPU -------*/
+
+.feature-panel.gpu .video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: var(--z-negative);
+    border-radius: 1.25rem;
+}
+
+@media screen and (min-width: 734px) {
+    .feature-panel.gpu .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-panel.gpu .content {
+        max-width: initial;
+    }
+
+    .feature-panel.gpu .descripcion {
+        font-size: 1.2rem;
+    }
+
+    .feature-panel.gpu .caracteristicas-container {
+        gap: 0;
+    }
+
+    .feature-panel.gpu .caracteristicas {
+        line-height: 2.7rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .feature-panel.gpu .caracteristicas-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feature-panel.gpu .caracteristicas {
+        padding: 3rem;
+    }
+
+    .feature-panel.gpu .subtitle {
+        font-size: 4.5rem;
+    }
+
+    .feature-panel.gpu .number {
+        --size: 8rem;
+    }
+
+    .feature-panel .caption {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ---- Aprendizaje continuo -----*/
+
+.feature-panel.learning {
+    background-image: linear-gradient(-135deg, #590a0d 0%, #10071c 100%);
+}
+
+.feature-panel.learning .description {
+    font-size: var(--big-body-size);
+    line-height: 1.2;
+}
+
+.feature-panel.learning .caracteristicas-container {
+    font-weight: var(--medium-font);
+}
+
+
+@media screen and (min-width: 734px) {
+
+    .feature-panel.learning {
+        display: grid;
+        grid-template-columns: 1.5fr 0.5fr;
+    }
+
+    .feature-panel.learning .caracteristicas-container {
+        gap: 1rem;
+        align-items: end;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feature-panel.learning .subtitle {
+        font-size: 3.5rem;
+    }
+
+    .feature-panel.learning .number {
+        --size: 4rem;
+    }
+
+    .feature-panel.learning .caption {
+        font-size: 1.4rem;
+    }
+
+    .feature-panel.learning .caracteristicas {
+        font-size: 1.1rem;
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    .feature-panel.learning .content {
+        min-width: 32rem;
+    }
+    .feature-panel.learning .image {
+        right: 0;
+        width: 50%;
+    }
+}
+
+/* ----macOS Monterrey ----*/
+
+.feature-panel.macOS-Monterey .subtitle{
+    font-size: var(--normal-title-size);
+    line-height: 1.05;
+}
+
+/*--------- Speed ------------*/
+
+.feature-panel.speed .description{
+    margin-bottom: 3rem;
+}
+
+.feature-panel.speed .subtitle{
+    text-align: center;
+    line-height: 1;
+    font-size: 4.3rem;
+    align-items: center;
+}
+
+.feature-panel.speed .first-line{
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.feature-panel.speed :is(.second-line, .background-container){
+    opacity: 0.15;
+    transition: opacity 700ms;
+} 
+
+.feature-panel.speed.is-active :is(.second-line, .background-container){
+    opacity: initial;
+}
+
+@media screen and (max-width: 1000px) {
+    .feature-panel.speed .subtitle{
+        font-size: 2.7rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .feature-panel.speed .subtitle{
+        font-size: 2.3rem;
+    }
+}
+/* ----- Apps ------ */
+.feature-panel.apps .apps-image{
+    width: 80%;
+    display: block;
+    margin-inline: auto;
+}
+
+
+/* -------------- Subgrid de caracteristicas ---------- */
+
+.sub-grid{
+    display: grid;
+    gap: var(--gap);
+}
+.sub-grid .feature-panel .title{
+    margin-bottom: 1.25rem;
+}
+
+.sub-grid .feature-panel .content{
+    padding-right: var(--padding);
+    max-width: initial;
+}
+
+.feature-panel.apps .description{
+    margin-bottom: 3rem;
+}
+
+.feature-panel.apps .subtitle{
+    text-align: center;
+    line-height: 1;
+}
+
+.feature-panel.apps .first-line{
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+@media screen and (min-width: 800px){
+    .sub-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*---- Subgrid second -----*/
+
+.sub-grid-second{
+    display: grid;
+    gap: var(--gap);
+}
+
+.sub-grid-second .content{
+    padding-right: var(--padding);
+    max-width: 100%;
+}
+
+@media screen and (min-width: 800px){
+    .sub-grid-second{
+        grid-template-columns: 1.3fr 0.7fr;
+    }
+}
+
+/* --- Diseño compacto ---*/
+
+.feature-panel.compact{
+    background-color: var(--bg-color);
+}
+
+.feature-panel.compact .content{
+    padding-bottom: 10; 
+}
+
+.feature-panel.compact .subtitle{
+    font-size: 3rem;
+}
+
+.feature-panel.compact .video-container{
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+}
+
+@media screen and (max-width: 800px){
+    .feature-panel.compact .video-container{
+        display: block;
+    }
+
+    .video-container .video{
+        padding-top:0 ;
+    }
+
+    .feature-panel.compact .subtitle{
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,161 @@
+/* Imagen banner */
+.hero-image {
+    position: relative;
+    width: 46rem;
+    height: 27rem;
+    overflow: hidden;
+
+}
+
+.hero-image .picture {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+/*----- Contenido del banner principal---*/
+
+.main-hero-banner {
+    text-align: center;
+}
+
+.main-hero-banner .container {
+    position: relative;
+    margin-top: -5.5rem;
+    color: var(--text-color-alt);
+    font-size: var(--bigger-body-size);
+    font-weight: var(--medium-font);
+    letter-spacing: 0.0005em;
+    line-height: 1.25;
+}
+
+.main-hero-banner .product-title {
+    font-size: var(--bigger-body-size);
+    margin-bottom: 0.5rem;
+    animation-delay: 0.7s;
+}
+
+.main-hero-banner .hero-title {
+    padding-bottom: 1.25rem;
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    font-weight: var(--bold-font);
+
+    /* Degradado de fondo */
+    background-image: radial-gradient(#eff1ff, #000 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-position: 50% 75%;
+    background-size: 150% 200%;
+    animation-delay: 0.9s;
+}
+
+.main-hero-banner .description {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    animation-delay: 0.11s;
+}
+
+.main-hero-banner :is(.subtitle, .hero-cta) {
+    font-size: 1.5rem;
+}
+
+.main-hero-banner .subtitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.main-hero-banner .subtitle .chip {
+    --size: 4rem;
+    width: var(--size);
+    height: var(--size);
+}
+
+.main-hero-banner .hero-cta-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-hero-banner .hero-cta {
+    color: var(--text-color);
+    font-weight: var(--normal-font);
+    padding-block: 0.5rem;
+}
+@media screen and (max-width : 734px) {
+    .main{
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width : 734px) {
+    .hero-image {
+        width: 60rem;
+        height: 39rem;
+    }
+
+    .main-hero-banner .container{
+        margin-top: -9rem;
+    }
+
+    .main-hero-banner .product-title{
+        margin-bottom: 1rem;
+    }
+
+    .main-hero-banner .subtitle{
+        flex-direction: row;
+    }
+    .main-hero-banner .hero-title {
+        font-size: 5rem;
+    }
+
+    .main-hero-banner .subtitle .chip{
+        --size: 6rem;
+    }
+}
+
+@media screen and (min-width : 1024px) {
+
+    .hero-image{
+        width: 85rem;
+        height: 45rem;
+    }
+
+    .main-hero-banner .description{
+        max-width: 56rem;
+        margin-inline: auto;
+    }
+}
+
+/*---- Estilos para la animación ----*/
+/* Pantalla encendiendose */
+@keyframes turn-one-hero-images{
+    to{
+        opacity: 0;
+    }   
+}
+
+.hero-image .picture.dark{
+    animation: turn-one-hero-images 0.8s ease-in-out forwards; /* forwards hace que el estado final sea en el que se queda la animacion */
+    /* ease-in-out: hace que la animacion tega una secuencia de velocidad*/
+}
+
+
+/* Contenido del banner */
+
+@keyframes fade-in-hero{
+    to{
+        opacity: initial;
+        transform: initial;
+    }
+}
+
+.main-hero-banner :is(.product-title, .hero-title, .description){
+    opacity: 0;
+    transform: translateY(4rem);
+    animation: fade-in-hero 2.5s ease-out forwards;
+}
